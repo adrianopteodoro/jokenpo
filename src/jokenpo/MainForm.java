@@ -5,6 +5,8 @@
  */
 package jokenpo;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.border.TitledBorder;
@@ -249,7 +251,14 @@ public class MainForm extends javax.swing.JFrame {
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         ImageIcon kenPlayer = new ImageIcon(getClass().getResource("/jokenpo/Images/ken_empty.png"));
         ImageIcon kenCPU = new ImageIcon(getClass().getResource("/jokenpo/Images/ken_empty.png"));
-        ImageIcon kenRes;
+        ImageIcon kenRes = new ImageIcon(getClass().getResource("/jokenpo/Images/res_empty.png"));
+        this.lblPlayer.setIcon(kenPlayer);
+        this.lblCPU.setIcon(kenCPU);
+        this.lblResultado.setIcon(kenRes);
+        this.lblCPUName.setText(" ");
+        this.lblPlayerName.setText(" ");
+        this.repaint();      
+        
         // ken 0 = papel, 1 = pedra, 2 = tesoura
         int playerken, cpuken;
         playerken = 0;
